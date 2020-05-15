@@ -26,6 +26,7 @@ header{
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 1;
 }
 .menu ul{
   display:flex;
@@ -37,6 +38,12 @@ header{
 .menu a{
   display: block;
   padding: 10px 15px;
+  transition: background-color 1s, color, 1s;
+}
+.menu a:active,
+.menu a:hover{
+  background-color: teal;
+  color: white;
 }
 a{
   color:teal;
@@ -44,6 +51,21 @@ a{
 }
 a:hover{
   text-decoration:underline;
+}
+.titulos{
+  transform: scale(0.1) rotate(360deg) translateY(75vh);
+  opacity: 0;
+  animation: linear 2s titulosLoucos forwards;
+}
+@keyframes titulosLoucos{
+  /*especificar porcentagens ou usar from(0%) e to(100%)*/
+  0%{
+
+  }
+  100%{
+    transform: scale(1) rotate(0) translateY(0);
+    opacity: 1;
+  }
 }
 .site-subtitle,.site-title{
   color:whitesmoke;
@@ -57,11 +79,12 @@ a:hover{
   font-style:italic;
   font-family: 'Press Start 2P', cursive;
   line-height: 1.8em;
-}
+} 
 .portifolio{
   padding: 2.5em;
   height: 100vh;
 }
+.contatos h2,
 .portifolio h2 {
   font-family: Arial;
   font-size: 2em;
@@ -88,6 +111,29 @@ a:hover{
 .img-portifolio{
   height: auto;
   width: 150px;
-  border-radius: 45px
+  border-radius: 45px;
+  transition: transform 1s;
 }
+.img-portifolio:hover{
+  transform: scale(1.5) rotate(360deg);
+}
+.contatos{
+  height: 50vh;
+  padding: 2.5em;
+}
+.contatos .gridcontatos{
+  text-align: center;
+}
+.contatos a{
+  font-size: 6em;
+  color: aquamarine;
+  padding: 1em;
+  transition: text-shadow 1s;
+}
+.contatos a:active,
+.contatos a:hover{
+  text-decoration: none;
+  text-shadow: 25px 15px 10px rgb(80, 160, 160);
+}
+
   
